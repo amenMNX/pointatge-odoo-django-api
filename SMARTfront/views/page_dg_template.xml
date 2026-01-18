@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="page_dg" name="Pointage – DG">
+        <t t-call="website.layout">
+            <div class="container py-4">
+                <h2>Présences du jour</h2>
+                <input type="date" id="calpicker" class="form-control" t-att-data-api="api_url" />
+                <button id="btn_load" class="btn btn-primary mt-2">Afficher</button>
+                <ul id="smartfront_dg_liste" class="list-group mt-3"></ul>
+            </div>
+            <script src="/SMARTfront/static/src/js/calendar_widget.js"></script>
+        </t>
+    </template>
+</odoo>

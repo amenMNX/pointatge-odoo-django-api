@@ -1,0 +1,43 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<odoo>
+    <template id="page_employe" name="Mon pointage">
+        <t t-call="website.layout">
+            <div id="page_employe" class="container py-4"
+                t-att-data-api-personnel="api_personnel_url"
+                t-att-data-api-pointage="api_pointage_url"
+                t-att-data-matricule="matricule">
+
+                <h2>Mon pointage</h2>
+                <p>Bonjour <span id="nom_complet">Chargement…</span></p>
+
+                <!-- Heures déjà enregistrées (depuis Odoo) -->
+                <div class="mt-3">
+                    <strong>Arrivée :</strong>
+                    <span id="heure_arrivee">--:--</span>
+                    <br />
+                    <strong>Départ :</strong>
+                    <span id="heure_depart">--:--</span>
+                </div>
+
+                <!-- Boutons Odoo (ils appellent action_pointer_arrivee / action_pointer_depart) -->
+                <div class="mt-3">
+                    <a href="/pointage/arrivee" class="btn btn-success">
+                        Pointer arrivée
+                    </a>
+                    <a href="/pointage/depart" class="btn btn-warning ms-2">
+                        Pointer départ
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Historique rapide (chargé via JS) -->
+            <h4 class="mt-4">Mes 5 derniers pointages</h4>
+            <ul id="historique" class="list-group">
+                <!-- charger dynamiquement par JS -->
+            </ul>
+
+            <script src="/eneamfront/static/src/js/employe_widget.js" />
+        </t>
+    </template>
+</odoo>

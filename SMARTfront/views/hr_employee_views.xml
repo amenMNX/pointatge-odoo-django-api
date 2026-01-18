@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- AJOUTER le matricule dans le formulaire -->
+            <xpath expr="//field[@name='work_phone']" position="after">
+                <field name="matricule" required="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='work_email']" position="after">
+                <field name="user_id"/>
+                <button name="action_create_user" type="object"
+                        string="Créer compte Odoo" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- AJOUTER aussi dans la vue liste -->
+    <record id="view_employee_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.tree.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="matricule"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

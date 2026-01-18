@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pointage_rh,hr.pointage RH,model_hr_pointage,base.group_hr_manager,1,1,1,1
+access_pointage_user,hr.pointage Employee,model_hr_pointage,base.group_user,1,0,0,0

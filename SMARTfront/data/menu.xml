@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Action -->
+        <record id="action_pointage_dg" model="ir.actions.act_window">
+            <field name="name">Toutes les présences</field>
+            <field name="res_model">SMART.pointage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_pointage_user" model="ir.actions.act_window">
+            <field name="name">Mon pointage</field>
+            <field name="res_model">SMART.pointage</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menu -->
+        <record id="menu_eneam_root" model="ir.ui.menu">
+            <field name="name">SMART Pointage</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="menu_pointage_dg" model="ir.ui.menu">
+            <field name="name">Toutes les présences</field>
+            <field name="parent_id" ref="menu_SMART_root" />
+            <field name="sequence">10</field>
+            <field name="action" ref="SMARTfront.action_pointage_dg" />
+            <!-- <field name="groups_id" eval="[(4, ref('SMARTfront.group_SMART_responsable'))]" /> -->
+        </record>
+
+        <record id="menu_pointage_user" model="ir.ui.menu">
+            <field name="name">Mon pointage</field>
+            <field name="parent_id" ref="menu_SMART_root" />
+            <field name="sequence">20</field>
+            <field name="action" ref="action_pointage_user" />
+        </record>
+    </data>
+</odoo>
