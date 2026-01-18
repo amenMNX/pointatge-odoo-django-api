@@ -7,3 +7,4 @@ Step	Name / Goal	Status	Notes / Actions Needed
 5	Testing / Validation	⚠️ PARTIAL	Manual testing possible via Django shell and sync_odoo command. Automated unit tests not yet implemented. Edge cases (skipped days, multiple employees) should be tested.
 ////
 api problems and logical ones
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7c12ff48-c591-4257-9cbf-32469c854b96" />
